@@ -51,7 +51,7 @@ public class ToolsScreenView extends AbstractScreenView<ToolsScreenModel> {
     contentPanel.add(Buttons.newLargeShowSignMessageWizardButton(getShowSignMessageWizardAction()), MultiBitUI.LARGE_BUTTON_MIG + ",align center,push");
     contentPanel.add(Buttons.newShowVerifyMessageWizardButton(getShowVerifyMessageWizardAction()), MultiBitUI.LARGE_BUTTON_MIG + ",align center,push");
     contentPanel.add(Buttons.newShowVerifyNetworkButton(getShowVerifyNetworkAction()), MultiBitUI.LARGE_BUTTON_MIG + ",align center,push");
-
+    contentPanel.add(Buttons.newSignTxButton(getShowSignTxAction()), MultiBitUI.LARGE_BUTTON_MIG + ",align center,push");
     // Hardware wallet tool is in top right for good visibility
     contentPanel.add(Buttons.newShowUseHardwareWalletWizardButton(
       getShowUseHardwareWalletWizardAction(),
@@ -133,4 +133,16 @@ public class ToolsScreenView extends AbstractScreenView<ToolsScreenModel> {
     };
   }
 
+  /**
+   * @return An action to show the "verify network" tool
+   */
+  private AbstractAction getShowSignTxAction() {
+    return new AbstractAction() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+
+        Panels.showLightBox(Wizards.newSignTxWizard().getWizardScreenHolder());
+      }
+    };
+  }
 }

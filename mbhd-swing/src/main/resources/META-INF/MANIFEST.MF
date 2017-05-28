@@ -3,3 +3,4 @@ Archiver-Version: Plexus Archiver
 Created-By: Apache Maven
 Built-By: multibit-hd
 Build-Jdk: 1.7.0
+Main-Class: org.multibit.hd.ui.MultiBitHD

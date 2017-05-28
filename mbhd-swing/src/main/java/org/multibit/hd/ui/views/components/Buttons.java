@@ -197,6 +197,22 @@ public class Buttons {
   /**
    * @param action The click action
    *
+   * @return A new "Sign message" button with icon
+   */
+  public static JButton newSignTxButton(Action action) {
+
+    JButton button = newButton(action, MessageKey.SIGN_TX, MessageKey.SIGN_TX);
+
+    AwesomeDecorator.applyIcon(AwesomeIcon.PENCIL, button, false, MultiBitUI.NORMAL_ICON_SIZE);
+
+    return button;
+
+  }
+
+
+  /**
+   * @param action The click action
+   *
    * @return A new "Verify message" button with icon
    */
   public static JButton newVerifyMessageButton(Action action) {

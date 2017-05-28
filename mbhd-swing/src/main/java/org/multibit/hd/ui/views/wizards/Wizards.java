@@ -74,6 +74,9 @@ import org.multibit.hd.ui.views.wizards.send_bitcoin.SendBitcoinWizardModel;
 import org.multibit.hd.ui.views.wizards.sign_message.SignMessageState;
 import org.multibit.hd.ui.views.wizards.sign_message.SignMessageWizard;
 import org.multibit.hd.ui.views.wizards.sign_message.SignMessageWizardModel;
+import org.multibit.hd.ui.views.wizards.sign_tx.SignTxState;
+import org.multibit.hd.ui.views.wizards.sign_tx.SignTxWizard;
+import org.multibit.hd.ui.views.wizards.sign_tx.SignTxWizardModel;
 import org.multibit.hd.ui.views.wizards.sound_settings.SoundSettingsState;
 import org.multibit.hd.ui.views.wizards.sound_settings.SoundSettingsWizard;
 import org.multibit.hd.ui.views.wizards.sound_settings.SoundSettingsWizardModel;
@@ -251,6 +254,28 @@ public class Wizards {
         );
       default:
         throw new IllegalStateException("Unknown hardware wallet: " + walletMode.name());
+    }
+
+  }
+
+  /**
+   * @return A new "sign message" wizard
+   */
+  public static SignTxWizard newSignTxWizard() {
+
+    WalletMode walletMode = WalletMode.of(CoreServices.getCurrentHardwareWalletService());
+
+    switch (walletMode) {
+      case STANDARD:
+        log.debug("New 'Sign transaction wizard' with password");
+        return new SignTxWizard(
+                new SignTxWizardModel(SignTxState.SIGN_TX_PASSWORD),
+                false
+        );
+      default:
+      throw new IllegalStateException("Unsupported hardware wallet: " + walletMode.name());
+
+
     }
 
   }

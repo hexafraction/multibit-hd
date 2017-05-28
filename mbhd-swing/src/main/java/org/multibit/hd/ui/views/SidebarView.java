@@ -253,6 +253,9 @@ public class SidebarView extends AbstractView {
         case EXIT:
           Panels.showLightBox(Wizards.newExitWizard().getWizardScreenHolder());
           break;
+        case SIGN_TX:
+
+          break;
         default:
           Configurations.currentConfiguration.getAppearance().setCurrentScreen(nodeInfo.getDetailScreen().name());
           ViewEvents.fireShowDetailScreenEvent(nodeInfo.getDetailScreen());

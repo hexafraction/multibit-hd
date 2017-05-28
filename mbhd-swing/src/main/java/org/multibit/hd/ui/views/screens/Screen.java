@@ -67,7 +67,7 @@ public enum Screen {
    */
   @Deprecated
   HISTORY,
-
+  SIGN_TX
   // End of enum
   ;
 

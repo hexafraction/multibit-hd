@@ -128,7 +128,7 @@ public class AboutPanelView extends AbstractWizardPanelView<AboutWizardModel, St
 //           Panels.showLightBox(Wizards.newSendBitcoinWizard(donateParameter).getWizardScreenHolder());
 //         } catch (BitcoinURIParseException pe) {
 //           // Should not happen
-//           log.error(pe.getMessage());
+//           log.error(pe.getTxHex());
 //         }
 //       }
 //     };

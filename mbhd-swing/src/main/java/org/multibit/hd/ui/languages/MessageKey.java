@@ -102,6 +102,7 @@ public enum MessageKey {
 
   SIGN_MESSAGE("sign_message"),
   SIGN_MESSAGE_TOOLTIP("sign_message_tooltip"),
+  SIGN_TX("sign_tx"),
 
   VERIFY_MESSAGE("verify_message"),
   VERIFY_MESSAGE_TOOLTIP("verify_message_tooltip"),
